@@ -1,0 +1,22 @@
+builds/
+.env
+node_modules/
+
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+*.out
+
+go.work
+go.work.sum
+
+.env
+
+
+

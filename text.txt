@@ -1,0 +1,136 @@
+                "AF - Afrikaans" and 
+                "SQ - shqiptare" and 
+                "AM - አማርኛ" and 
+                "AR - عرب" and 
+                "HY - հայերեն" and 
+                "AS - অসমীয়া" and 
+                "AY - Aymara" and 
+                "AZ - Azərbaycan" and 
+                "BM - Bamanankan" and 
+                "EU - euskara" and 
+                "BE - беларускі" and 
+                "BN - বাংলা" and 
+                "BHO - भोसपुरी के बा" and 
+                "BS - bosanski" and 
+                "BG - български" and 
+                "CA - Català" and 
+                "CEB - Cebuano" and 
+                "ZH_CN - 简体中文" and 
+                "ZH - 简体中文" and 
+                "ZH_TW - 繁體中文" and 
+                "CO - Corsu" and 
+                "HR - Hrvatski" and 
+                "CS - čeština" and 
+                "DA - dansk" and 
+                "DV - ދިވެހި" and 
+                "DOI - डोगरी" and 
+                "NL - Nederlands" and 
+                "EN - English" and 
+                "EO - Esperanto" and 
+                "ET - eesti keel" and 
+                "EE - Eʋegbe" and 
+                "FIL - Filipino Tagalog" and 
+                "FI - Tarkoitukset" and 
+                "FR - Français" and 
+                "FY - Frysk" and 
+                "GL - galego" and 
+                "KA - ქართული" and 
+                "DE - Deutsch" and 
+                "EL - Ελληνικά" and 
+                "GN - Guarani" and 
+                "GU - ગુજરાતી" and 
+                "HT - Kreyòl ayisyen" and 
+                "HA - hausa" and 
+                "HAW - ʻŌlelo Hawaiʻi" and 
+                "HE - עִברִית" and 
+                "IW - עִברִית" and 
+                "HI - हिंदी" and 
+                "HMN - Hmoob" and 
+                "HU - Magyar" and 
+                "IS - íslenskur" and 
+                "IG - igbo" and 
+                "ILO - Ilocano" and 
+                "ID - bahasa Indonesia" and 
+                "GA - Gaeilge" and 
+                "IT - Italiano" and 
+                "JA - 日本語" and 
+                "JV - basa jawa" and 
+                "JW - basa jawa" and 
+                "KN - ಕ್ಯಾನರ್ಸ್" and 
+                "KK - қазақ" and 
+                "KM - ខ្មែរ" and 
+                "RW - Kiñarwanda" and 
+                "GOM - कोंकणी" and 
+                "KO - 한국인" and 
+                "KRI - Krio" and 
+                "KU - Kurdî" and 
+                "CKB - کوردی سۆرانی" and 
+                "KY - Кыргызча" and 
+                "LO - ຊາວລາວ" and 
+                "LA - Latinus" and 
+                "LV - latviski" and 
+                "LN - Lingala" and 
+                "LT - lietuvių" and 
+                "LG - Oluganda" and 
+                "LB - lëtzebuergesch" and 
+                "MK - македонски" and 
+                "MAI - मैथिली" and 
+                "MG - Malagasy" and 
+                "MS - Melayu" and 
+                "ML - മലബാർ" and 
+                "MT - Malti" and 
+                "MI - Maori" and 
+                "MR - मराठी" and 
+                "LUS - Mizo tawng" and 
+                "MN - Монгол" and 
+                "MY - မြန်မာ" and 
+                "NE - नेपाली" and 
+                "NO - norsk" and 
+                "NY - Nyanja Chichewa" and 
+                "OR - ଘୃଣା oriya" and 
+                "OM - Afaan Oromoo" and 
+                "PS - پښتو" and 
+                "FA - فارسی" and 
+                "PL - Polski" and 
+                "PT - Português" and 
+                "PA - ਪੰਜਾਬੀ" and 
+                "QU - Runasimi" and 
+                "RO - Română" and 
+                "RU - Русский" and 
+                "SM - samoa" and 
+                "SA - संस्कृत" and 
+                "GD - Gàidhlig na h-Alba" and 
+                "NSO - Sepedi" and 
+                "SR - Српски" and 
+                "ST - sesotho" and 
+                "SN - Shona" and 
+                "SD - سنڌي" and 
+                "SI - සිංහල" and 
+                "SK - slovenský" and 
+                "SL - Slovenščina" and 
+                "SO - Soomaali" and 
+                "ES - Español" and 
+                "SU - basa sunda" and 
+                "SW - kiswahili" and 
+                "SV - svenska" and 
+                "TL - Tagalog Filipino" and 
+                "TG - тоҷикӣ" and 
+                "TA - தமிழ்" and 
+                "TT - Татар" and 
+                "TE - తెలుగు" and 
+                "TH - แบบไทย" and 
+                "TI - tigriña ዝብል ቃል ንረክብ" and 
+                "TS - Tsonga" and 
+                "TR - Türkçe" and 
+                "TK - Türkmenler" and 
+                "AK - Twi Akan ." and 
+                "UK - українська" and 
+                "UR - اردو" and 
+                "UG - Uigur" and 
+                "UZ - o'zbek" and 
+                "VI - Tiếng Việt" and 
+                "CY - Cymraeg" and 
+                "XH - isiXhosa" and 
+                "YI - יידיש" and 
+                "YO - Yoruba" and 
+                "ZU - Zulu"
