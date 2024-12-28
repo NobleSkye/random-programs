@@ -1,5 +1,4 @@
 # Random Programs Repository
-# Random Programs Repository
 
 This repository contains various random programs and projects that need a central storage location. These could include coding experiments, small utilities, or practice projects - just a mishmash of code that exists because... why not?
 
