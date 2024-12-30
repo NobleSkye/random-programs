@@ -84,7 +84,7 @@ func (t *Translator) getMainContent() *fyne.Container {
 	})
 
 	creditsButton := widget.NewButton("Credits", func() {
-		dialog.ShowInformation("Credits", "Made by NobleSkye using Golang", t.window)
+		dialog.ShowInformation("Credits", "Made by Steuber using Golang", t.window)
 	})
 
 	exitButton := widget.NewButton("Exit", func() {
