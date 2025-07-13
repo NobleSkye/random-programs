@@ -33,23 +33,41 @@ echo "2) 80% of total RAM (~$((total_ram_gb * 80 / 100))GB)"
 echo "3) 50% of total RAM (~$((total_ram_gb / 2))GB)"
 echo "4) 25% of total RAM (~$((total_ram_gb / 4))GB)"
 echo "5) Minimum (1.5GB)"
+echo "6) Custom amount (in MiB)"
 
-read -rp "Enter choice (1-5): " ram_choice
+read -rp "Enter choice (1-6): " ram_choice
 
 case $ram_choice in
-  1) ram_gb=$total_ram_gb ;;
-  2) ram_gb=$((total_ram_gb * 80 / 100)) ;;
-  3) ram_gb=$((total_ram_gb / 2)) ;;
-  4) ram_gb=$((total_ram_gb / 4)) ;;
-  5) ram_gb=2 ;;
-  *) echo "Invalid choice. Defaulting to 2GB."; ram_gb=2 ;;
+  1) ram_gb=$total_ram_gb
+     ram_value="${ram_gb}G"
+     ;;
+  2) ram_gb=$((total_ram_gb * 80 / 100))
+     ram_value="${ram_gb}G"
+     ;;
+  3) ram_gb=$((total_ram_gb / 2))
+     ram_value="${ram_gb}G"
+     ;;
+  4) ram_gb=$((total_ram_gb / 4))
+     ram_value="${ram_gb}G"
+     ;;
+  5) ram_value="2G" ;; # minimum 1.5GB = 2G here
+  6)
+     while true; do
+       read -rp "Enter custom RAM in MiB (minimum 1536): " custom_mib
+       if [[ "$custom_mib" =~ ^[0-9]+$ ]] && (( custom_mib >= 1536 )); then
+         ram_value="${custom_mib}M"
+         break
+       else
+         echo "Invalid input. Please enter a number greater or equal to 1536."
+       fi
+     done
+     ;;
+  *)
+    echo "Invalid choice. Defaulting to 2GB."
+    ram_value="2G"
+    ;;
 esac
 
-if (( ram_gb < 2 )); then
-  ram_gb=2
-fi
-
-ram_value="${ram_gb}G"
 echo "Selected RAM: $ram_value"
 
 # ------------------------
