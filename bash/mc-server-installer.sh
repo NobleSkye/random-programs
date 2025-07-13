@@ -22,8 +22,8 @@ fi
 # ------------------------
 # Memory calculations
 # ------------------------
-total_ram_mb=$(grep MemTotal /proc/meminfo | awk '{print int($2/1024)}')
-total_ram_gb=$((total_ram_mb / 1024))
+total_ram_kb=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+total_ram_gb=$(awk "BEGIN {printf \"%.0f\", $total_ram_kb/1024/1024}")
 
 echo "Total system RAM: ${total_ram_gb}GB"
 
