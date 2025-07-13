@@ -11,7 +11,7 @@ echo "==== Minecraft Server Auto Setup ===="
 # ------------------------
 echo "Updating package lists and installing dependencies..."
 sudo apt update
-sudo apt install -y default-jdk wget curl jq unzip
+sudo apt install -y default-jdk wget curl jq unzip tmux
 
 # Check Java
 if ! command -v java &> /dev/null; then
@@ -24,26 +24,23 @@ fi
 # ------------------------
 total_ram_mb=$(grep MemTotal /proc/meminfo | awk '{print int($2/1024)}')
 total_ram_gb=$((total_ram_mb / 1024))
-usable_ram_mb=$((total_ram_mb - 1024))  # Leave 1GB free
-usable_ram_gb=$((usable_ram_mb / 1024))
 
 echo "Total system RAM: ${total_ram_gb}GB"
-echo "Usable for server: ${usable_ram_gb}GB (1GB reserved for system)"
 
 echo "Choose how much RAM to allocate to the server:"
-echo "1) All usable RAM (${usable_ram_gb}GB)"
-echo "2) 80% of usable RAM (~$((usable_ram_gb * 80 / 100))GB)"
-echo "3) 50% of usable RAM (~$((usable_ram_gb / 2))GB)"
-echo "4) 25% of usable RAM (~$((usable_ram_gb / 4))GB)"
+echo "1) All available RAM (${total_ram_gb}GB)"
+echo "2) 80% of total RAM (~$((total_ram_gb * 80 / 100))GB)"
+echo "3) 50% of total RAM (~$((total_ram_gb / 2))GB)"
+echo "4) 25% of total RAM (~$((total_ram_gb / 4))GB)"
 echo "5) Minimum (1.5GB)"
 
 read -rp "Enter choice (1-5): " ram_choice
 
 case $ram_choice in
-  1) ram_gb=$usable_ram_gb ;;
-  2) ram_gb=$((usable_ram_gb * 80 / 100)) ;;
-  3) ram_gb=$((usable_ram_gb / 2)) ;;
-  4) ram_gb=$((usable_ram_gb / 4)) ;;
+  1) ram_gb=$total_ram_gb ;;
+  2) ram_gb=$((total_ram_gb * 80 / 100)) ;;
+  3) ram_gb=$((total_ram_gb / 2)) ;;
+  4) ram_gb=$((total_ram_gb / 4)) ;;
   5) ram_gb=2 ;;
   *) echo "Invalid choice. Defaulting to 2GB."; ram_gb=2 ;;
 esac
@@ -149,11 +146,36 @@ if [ "$software_choice" -ne 4 ]; then
 #!/bin/bash
 java -Xms${ram_value} -Xmx${ram_value} -jar $JAR_NAME nogui
 EOL
-
     chmod +x start.sh
 fi
 
+# ------------------------
+# Start tmux session
+# ------------------------
+SESSION_NAME="mc-server"
+
+if [ "$software_choice" -ne 4 ]; then
+    echo "Starting server inside tmux session: $SESSION_NAME"
+    tmux new-session -d -s "$SESSION_NAME" "./start.sh"
+else
+    echo "Modrinth modpack extracted. You may need to run setup or start scripts manually."
+    echo "Creating tmux session for you anyway..."
+    tmux new-session -d -s "$SESSION_NAME" "bash"
+fi
+
+# ------------------------
+# Print public IP and port
+# ------------------------
+public_ip=$(curl -s https://api.ipify.org)
+
+echo "========================================"
 echo "Setup complete!"
 echo "Server directory: $SERVER_DIR"
-echo "To start your server, run:"
-echo "cd $SERVER_DIR && ./start.sh"
+echo "Public IP: $public_ip"
+echo "Port: 25565 (default)"
+echo ""
+echo "Your server is running inside tmux session: $SESSION_NAME"
+echo "To attach and see console, run:"
+echo "tmux attach -t $SESSION_NAME"
+echo "To detach, press: Ctrl + b, then d"
+echo "========================================"
